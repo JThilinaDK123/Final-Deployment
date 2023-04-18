@@ -1,0 +1,33 @@
+#title {
+  margin-bottom: 0px;
+}
+
+#subtitle {
+  margin-top: 0px;
+}
+
+#container {
+  text-align: center;
+}
+
+#msg-input, #msg-response, #msg-send {
+  font-weight: 300;
+  font-size: small;
+}
+
+#msg-input {
+  width: 80%;
+  height: 30px;
+}
+
+#msg-send {
+  height: 33px;
+}
+
+#msg-response {
+  border: 2px solid burlywood;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
