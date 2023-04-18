@@ -1,6 +1,6 @@
 /**
  *  The `dotenv` module is used to load environment variables from a `.env` file into `process.env` object, which can be accessed throughout the application.
- * The `express` module is a popular Node.js web framework used for building web applications and APIs. 
+ * The `express` module is a popular Node.js web framework used for building web applcations and APIs. 
  * The `app` object is an instance of the `express` application that is used to define routes and middleware for the application.
  * */
 require('dotenv').config();
