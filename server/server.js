@@ -15,8 +15,8 @@ const app = express();
 const Configuration = require('openai').Configuration;
 const OpenAIApi = require('openai').OpenAIApi;
 const configuration = new Configuration({
-    organization: process.env.OPENAI_ORG_ID,
-    apiKey: process.env.OPENAI_API_KEY,
+    organization: process.OPENAI_ORG_ID,
+    apiKey: process.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 
