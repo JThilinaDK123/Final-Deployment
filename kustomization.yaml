@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - service.yml
   - deployment.yml
+  - grafana.yml
