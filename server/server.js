@@ -25,21 +25,21 @@ const openai = new OpenAIApi(configuration);
  * Once the connection is established, the `mongoose` library can be used to define and interact with database models. 
  * */
 
-const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+// const mongoose = require('mongoose');
+// mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // /**
 //  * These lines of code are defining a Mongoose schema for the `Response` model. The `mongoose.Schema` method is used to create a new schema object, which is then used to define the structure of the `Response` model. The schema defines five properties: `prompt`, `status`, `created`, `message`, and `total_tokens`, each with a specified data type. 
 //  * */
-const Schema = mongoose.Schema;
-const responseSchema = new Schema({
-    prompt: { type: String },
-    status: { type: String },
-    created: { type: Number },
-    message: { type: String },
-    total_tokens: { type: Number }
-});
-const Response = mongoose.model("Response", responseSchema);
+// const Schema = mongoose.Schema;
+// const responseSchema = new Schema({
+//     prompt: { type: String },
+//     status: { type: String },
+//     created: { type: Number },
+//     message: { type: String },
+//     total_tokens: { type: Number }
+// });
+// const Response = mongoose.model("Response", responseSchema);
 
 /**
  * The function creates and saves an API response and returns the saved data.
