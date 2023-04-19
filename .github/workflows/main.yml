@@ -52,6 +52,7 @@ jobs:
           
       - name: Helm Charts
         run: |-
+          gcloud components install gke-gcloud-auth-plugin
           helm repo add stable https://charts.helm.sh/stable
           helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
           helm repo update
