@@ -14,11 +14,11 @@ env:
   TAG: 1.0.0
 
 jobs:
-  push_to_registry:
-    name: Push Docker image to Docker Hub
+  CICD_Pipeline:
+    name: CICD Pipeline vs GKE Cluster
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repo
+      - name: Check the Repository 
         uses: actions/checkout@v3
         
       - name: Setup Google Cloud CLI
@@ -29,23 +29,23 @@ jobs:
           service_account_key: ${{secrets.GKE_SA_KEY}}
           project_id: ${{secrets.GKE_PROJECT}}
 
-      - name: Configure Docker
+      - name: Configure the Docker
         run: |-
           gcloud --quiet auth configure-docker
 
-      - name: Get GKE Credentials
+      - name: Validate the GKE Credentials
         run: |-
           gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
       
-      - name: Build Docker Image
+      - name: Build the docker Image
         run: |-
           docker build --tag "gcr.io/$PROJECT_ID/$IMAGE:$TAG" .
       
-      - name: Publish Docker Image to GCR
+      - name: Publish docker image in Google Cloud Registry
         run: |-
           docker push "gcr.io/$PROJECT_ID/$IMAGE:$TAG"
       
-      - name: Set up Kustomize
+      - name: Set up Kustomize file
         run: |-
           curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
           chmod u+x ./kustomize
